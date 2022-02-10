@@ -18,4 +18,4 @@ class RatingForm(forms.ModelForm):
 
     class Meta:
         movies = RatingStar
-        fields = ('star')
+        fields = ('star',)
