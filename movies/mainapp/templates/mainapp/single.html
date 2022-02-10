@@ -10,7 +10,7 @@
                     <div class="grid images_3_of_2">
                         <div class="movie_image">
                             <span class="movie_rating">5.0</span>
-                            <img src="{{ movie.poster.url }}" class="img-responsive" alt="" />
+                            <img src="{{ movie.poster.url }}" class="img-responsive" alt=""/>
                         </div>
                         <div class="movie_rate">
                             <div class="rating_desc">
@@ -70,13 +70,13 @@
                         <input type="hidden" name="parent" id="contactparent">
                         <div class="to">
                             <input type="text" class="text" name="name" value="Name" onfocus="this.value = '';"
-                                onblur="if (this.value == '') {this.value = 'Name';}">
+                                   onblur="if (this.value == '') {this.value = 'Name';}">
                             <input type="text" class="text" name="email" value="Email" onfocus="this.value = '';"
-                                onblur="if (this.value == '') {this.value = 'Email';}" style="margin-left:3%">
+                                   onblur="if (this.value == '') {this.value = 'Email';}" style="margin-left:3%">
                         </div>
                         <div class="text">
                             <textarea value="Message:" name="text" id="contactcomment" onfocus="this.value = '';"
-                                onblur="if (this.value == '') {this.value = 'Message';}">Message:</textarea>
+                                      onblur="if (this.value == '') {this.value = 'Message';}">Message:</textarea>
                         </div>
                         <div class="form-submit1">
                             <input name="submit" type="submit" id="submit" value="Submit Your Message"><br>
@@ -89,20 +89,20 @@
                         <ul class="single_list">
                             <li>
                                 <div class="preview"><a href="#"><img src="{% static 'images/2.jpg' %}"
-                                            class="img-responsive" alt=""></a>
+                                                                      class="img-responsive" alt=""></a>
                                 </div>
                                 <div class="data">
                                     <div class="title">{{ review.name }} / 2 hours ago / <a href="#">reply</a></div>
                                     <p>{{ review.text }}</p>
                                 </div>
                                 <a href="#formReview"
-                                    onclick="addReview('{{ review.name }}','{{ review.id }}')">Ответить</a>
+                                   onclick="addReview('{{ review.name }}','{{ review.id }}')">Ответить</a>
                                 <div class="clearfix"></div>
                             </li>
                             {% for rev in review.reviews_set.all %}
                             <li class="middle">
                                 <div class="preview"><a href="#"><img src="{% static 'images/2.jpg' %}"
-                                            class="img-responsive" alt=""></a>
+                                                                      class="img-responsive" alt=""></a>
                                 </div>
                                 <div class="data-middle">
                                     <div class="title">{{ rev.name }} / 2 hours ago / <a href="#">reply</a></div>
@@ -135,5 +135,6 @@
         document.getElementById('contactparent').value = id;
         document.getElementById('contactcomment').innerText = `${name},`;
     }
+
 </script>
 {% endblock content %}

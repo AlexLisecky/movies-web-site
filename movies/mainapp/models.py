@@ -23,6 +23,7 @@ class Actor(models.Model):
     """Актеры и режиссеры"""
 
     name = models.CharField(verbose_name='Имя', max_length=100)
+    slug = models.SlugField(verbose_name='слаг', unique=True)
     age = models.PositiveSmallIntegerField('Возраст', default=0)
     description = models.TextField(verbose_name='Описание')
     image = models.ImageField(verbose_name='Изображение', upload_to='actors/')
@@ -35,7 +36,7 @@ class Actor(models.Model):
         verbose_name_plural = 'Актеры и режиссеры'
 
     def get_absolute_url(self):
-        return reverse('actor_detail', kwargs={'slug': self.name})
+        return reverse('actor_detail', kwargs={'slug': self.slug})
 
 
 class Genre(models.Model):

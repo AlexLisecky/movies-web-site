@@ -53,7 +53,7 @@ class AddReview(View):
 class ActorDetailView(GenreYear, DetailView):
     model = Actor
     template_name = 'mainapp/actor.html'
-    slug_field = 'name'
+    slug_field = 'slug'
     context_object_name = 'actors'
 
 
